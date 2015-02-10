@@ -13,12 +13,16 @@ custom:
     category:
         default: Default Category
         another: Another Category
+	rsh: Recommender System Handbook
     categories:
       - name:  default
         title: Default Category
 
       - name:  another
         title: Another Category
+
+      - name:  rsh
+        title: Recommender System Handbook
 
     scrollingLoadCount: 2                          # 滚屏自动加载文章数量，“0”为关闭
 
