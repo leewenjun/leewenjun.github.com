@@ -24,7 +24,7 @@ custom:
       - name:  rsh
         title: Recommender System Handbook
 
-    scrollingLoadCount: 2                          # 滚屏自动加载文章数量，“0”为关闭
+    scrollingLoadCount: 5                          # 滚屏自动加载文章数量，“0”为关闭
 
 meta:
     author:
