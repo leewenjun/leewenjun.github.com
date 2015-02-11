@@ -13,7 +13,7 @@ custom:
     category:
         default: Default Category
         another: Another Category
-	rsh: Recommender System Handbook
+        rsh: Recommender System Handbook
     categories:
       - name:  default
         title: Default Category
