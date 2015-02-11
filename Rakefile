@@ -69,7 +69,6 @@ task :post do
     post.puts "category: #{category}"
     post.puts "tags: #{tags}"
     post.puts "---"
-    post.puts "{% include JB/setup %}"
   end
 end # task :post
 
@@ -100,7 +99,27 @@ end # task :page
 
 desc "Launch preview environment"
 task :preview do
-  system "jekyll serve -w"
+    require "launchy"
+    require "jekyll"
+
+    # Yep, it's a hack! Wait a few seconds for the Jekyll site to generate and
+    # then open it in a browser. Someday we can do better than this, I hope.
+    Thread.new do
+      sleep 4
+      puts "Opening in browser..."
+      Launchy.open("http://localhost:4000")
+    end
+
+    # Generate the site in server mode.
+    puts "Running Jekyll..."
+    options = {
+      "source"      => File.expand_path("_site"),
+      "destination" => File.expand_path("site/_site"),
+      "watch"       => true,
+      "serving"     => true
+    }
+    Jekyll::Commands::Build.process(options)
+    Jekyll::Commands::Serve.process(options)
 end # task :preview
 
 # Public: Alias - Maintains backwards compatability for theme switching.
