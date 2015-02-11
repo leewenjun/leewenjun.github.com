@@ -5,7 +5,7 @@ permalink: /posts/:title.html
 exclude:
   - README.md
 
-name: Liwenjun's Blog
+name: Liwenjun Blog
 host: irecsys.com
 desc: 推荐系统相关文章介绍.
 
